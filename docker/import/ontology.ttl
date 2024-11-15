@@ -7,6 +7,7 @@ ex:Book a rdf:Class .
 ex:Author a rdf:Class .
 ex:Publisher a rdf:Class .
 ex:Genre a rdf:Class .
+ex:User a rdf:Class .
 
 # Relationships
 ex:CONTAINS a rdf:Property ;
@@ -28,6 +29,11 @@ ex:HAS_GENRE a rdf:Property ;
     rdf:type rdf:Property ;
     rdf:domain ex:Book ;
     rdf:range ex:Genre .
+
+ex:BORROW_BOOK a rdf:Property ;
+    rdf:type rdf:Property ;
+    rdf:domain ex:User ;
+    rdf:range ex:Book .
 
 # Instances
 
@@ -112,3 +118,8 @@ ex:b5 a ex:Book ;
     ex:HAS_PUBLISHER ex:p5 ;
     ex:HAS_GENRE ex:g5 ;
     ex:state "Present" .
+
+# Users
+ex:u1 a ex:User ;
+    ex:name "Benedikt S." ;
+    ex:BORROW_BOOK ex:b1 .
